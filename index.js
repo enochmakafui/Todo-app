@@ -8,10 +8,13 @@ app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get("/",(req,res)=>{
-    const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+    
     res.render("index.ejs")
 })
 
+app.get("/work",(req,res)=>{
+    res.render("worklist.ejs")
+})
 
 app.listen(port,(req,res)=>{
     console.log(`Server is running on port ${port}`);

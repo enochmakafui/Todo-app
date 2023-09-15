@@ -12,6 +12,16 @@ body {
     min-height: 95vh;
 
 }
+h1{
+   background-color: #a683e3; 
+   color: white;
+   padding:10px;
+   border-radius: 5px;
+   width: 400px;
+   text-align: center;
+   margin: 50px auto;
+   box-shadow: 5px 5px 15px -5px rgba(0, 0, 0, 0.3);
+}
 .navbar ul{
     display: flex;
     flex-direction: row;
@@ -24,6 +34,7 @@ body {
 }
 .navbar a{
  text-decoration: none;
+ font-size: 15px;
 }
 .navbar i{
     margin-right: 7px;

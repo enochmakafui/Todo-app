@@ -1,10 +1,15 @@
 <%- include("partials/header.ejs") %>
 
-
-
 <% const date = new Date();
 %>
-<h1><%=date.getDay() %></h1>
+<%  const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];%>
+<% 
+    const dayNames = ["Sunday", "Monday", "Tuesday","Wednesday","Thursday","Friday","Saturday"];
+    const day =dayNames[date.getDay()]; %>
+    <%const month = months[date.getMonth()]%>
+
+
+<h1><%=  day %>, <%= month %> <%= date.getDate() %></h1>
 
 
 
