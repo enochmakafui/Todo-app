@@ -1,0 +1,46 @@
+html{
+
+    background-color: #e4e9fd;
+    background-image: -webkit-linear-gradient(65deg, #a683e3 50%, #e4e9fd 50%);
+    min-height: 1000px;
+    font-family: "helvetica neue";
+}
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+    min-height: 95vh;
+
+}
+.navbar ul{
+    display: flex;
+    flex-direction: row;
+    gap:50px;
+    font-size: 1em;
+    padding-top: 10px;
+}
+.navbar li{
+    list-style-type: none;
+}
+.navbar a{
+ text-decoration: none;
+}
+.navbar i{
+    margin-right: 7px;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:50px
+}
+
+footer{
+    align-self: center;
+    position:absolute;
+    top: 950px;
+    bottom: 0;
+    opacity: 0.5;
+}
