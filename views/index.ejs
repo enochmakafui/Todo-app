@@ -1,24 +1,47 @@
-<%- include("partials/header.ejs") %>
+<%- include("partials/header.ejs") %> 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> 
 
-<% const date = new Date();
-%>
-<%  const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];%>
-<% 
-    const dayNames = ["Sunday", "Monday", "Tuesday","Wednesday","Thursday","Friday","Saturday"];
-    const day =dayNames[date.getDay()]; %>
-    <%const month = months[date.getMonth()]%>
+<% const date = new Date(); %> <% const
+months = ["January", "February", "March", "April", "May", "June", "July",
+"August", "September", "October", "November", "December"];%> <% const dayNames =
+["Sunday", "Monday", "Tuesday","Wednesday","Thursday","Friday","Saturday"];
+const day =dayNames[date.getDay()]; %> <%const month = months[date.getMonth()]%>
+
+<h1><%= day %>, <%= month %> <%= date.getDate() %></h1>
+
+<div class="box">
+  <% if(locals.todayList){ %>
+        <% for(var i = 0;i<locals.todayList.length;i++) {%>
+            <div class="item">
+             <input type="checkbox" class="check" id="<%= i %>input"/>
+            <p class="todo" id="<%= i %>paragraph"><%= locals.todayList[i] %></p>
+            </div>
+        <% } %>
+  <% } %>
+ 
+ <script>
+$(".check").on("click",function(){
+  const doneTodo = this.getAttribute("id");
+  if ($(this).prop('checked')) {
+      console.log('Checkbox is checked');
+      $("#"+doneTodo[0]+"paragraph").addClass("striketodo");
+
+    } else {
+      console.log('Checkbox is unchecked');
+      $("#"+doneTodo[0]+"paragraph").removeClass("striketodo");
+
+    }
+})
 
 
-<h1><%=  day %>, <%= month %> <%= date.getDate() %></h1>
-
-
-
-
-
-
-
-
-
+</script> 
+  <!-- <input type="checkbox" />
+  <p></p> -->
+  <form action="/submitToday" method="post">
+    <input type="text" placeholder="New Item" name="todoName" />
+    <button type="submit">+</button>
+  </form>
+</div>
 
 
 <%- include("partials/footer.ejs") %>
